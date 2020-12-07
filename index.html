@@ -1,42 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>controller-group</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/mycss.css">
+  <title>proto</title>
 </head>
 <body>
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-              <ul class="navbar-nav">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Комп</a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">проектор</a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Экран</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Микрофон</a>
-                  </li>
-                  <li class="nav-item active">
-                    <a class="nav-link" href="#">Громкость</a>
-                  </li>
-                  <li class="nav-item active">
-                    <a class="nav-link" href="#">Настройки</a>
-                  </li>
-              </ul>
-            </div>
-          </nav>
+  <div class="container">
+    <div class = 'card card-menu-mobile'>
+        <ul class="nav">
+          <li class="nav-item" style="margin-left: 30px;margin-right: 30px"data-toggle="collapse" data-target="#page1">
+            <img src="img/settings.png" width="32px" height="32px" onclick = 'showPage(page1)'>
+        </li>
+        <li class="nav-item" style="margin-right: 30px" data-toggle="collapse" data-target="#page2">
+            <img src="img/projector.png" width='32px'height='32px' onclick = 'showPage(page2)'>
+        </li>
+        <li class="nav-item" style="margin-right: 30px" data-toggle="collapse" data-target="#page3">
+            <img src="img/fill.png" width="32px" height="32px" onclick = 'showPage(page3)'>
+        </li>
+        <li class="nav-item" style="margin-right: 30px"data-toggle="collapse" data-target="#page4">
+            <img src="img/microphone.png" width="32px" height="32px" onclick = 'showPage(page4)'>
+        </li>
+        <li class="nav-item" style="margin-right: 30px"data-toggle="collapse" data-target="#page5">
+          <img src="img/speaker.png" width="32px" height="32px" onclick = 'showPage(page5)'>
+        </li>
+        <li class="nav-item"data-toggle="collapse" style="margin-right: 30px" data-target="#page6" data-target="#page6">
+            <img src="img/keyboard.png" width="32px" height="32px" onclick = 'showPage(page6)'>
+        </li>
+        <li class="nav-item"data-toggle="collapse" style="margin-right: 30px" data-target="#page7" data-target="#page7">
+          <img src="img/group.png" width="32px" height="32px" onclick = 'showPage(page7)'>
+        </li>
+        <li class="nav-item"data-toggle="collapse" style = 'margin-top: 5px; border: none; width: 500px;'>
+          <button type="button"  class="btn btn-success btn-mobile" onclick="Sending ()" >Сохранить</button>
+        </li>
+      </ul>
     </div>
+    <div class="card card-menu" style="width: 240px; height: 400px; position: fixed;">
+      <div class="card-body">
+        <ul class="nav nav-tabs">
+         <li class="nav-item" style="margin-right: 40px">
+            <img src="https://i007.fotocdn.net/s120/2b9f27ebad2f2097/user_xl/2751735467.jpg" width="195px" height="60px">
+        </li>
+          <li class="nav-item" style="margin-right: 40px"data-toggle="collapse" data-target="#page1">
+            <img src="img/settings.png" width="24px" height="24px">Компьютер
+          </li>
+          <li class="nav-item" style="margin-right: 40px" data-toggle="collapse" data-target="#page2">
+            <img src="img/projector.png" width='24px'height='24px'>Проектор
+          </li>
+          <li class="nav-item" style="margin-right: 40px" data-toggle="collapse" data-target="#page3">
+            <img src="img/fill.png" width="24px" height="24px">Экран
+          </li>
+          <li class="nav-item" style="margin-right: 40px"data-toggle="collapse" data-target="#page4">
+            <img src="img/microphone.png" width="24px" height="24px">Микрофон
+          </li>
+          <li class="nav-item" style="margin-right: 40px"data-toggle="collapse" data-target="#page5">
+            <img src="img/speaker.png" width="24px" height="24px">Громкость
+          </li>
+          <li class="nav-item"data-toggle="collapse" data-target="#page6" data-target="#page6">
+            <img src="img/keyboard.png" width="24px" height="24px">Кнопки
+          </li>
+          <li class="nav-item"data-toggle="collapse" data-target="#page7" data-target="#page7">
+            <img src="img/group.png" width="24px" height="24px">Контакты
+          </li>
+          <li class="nav-item"data-toggle="collapse" style = 'margin-top: 5px; border: none'>
+            <button type="button"  class="btn btn-success" onclick="Sending ()">Сохранить</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+ <div class="container" style = 'max-width: 600px;'>
+  <div class="collapse show" id="page1" style = 'margin-top: 10px'>
+    <div class="card card-body">
+      <h3>Настройка Компьютера</h3>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Время работы</span>
+        </div>
+        <input type="text" id = 'timeWork'class="form-control" placeholder="Время работы"  aria-describedby="timeWork" onkeypress="return (event.charCode >= 48 && event.charCode <= 57 && /^\d{0,90000000}$/.test(this.value));" value = '30'>
+      </div>
+    </div>
+  </div>
 
-    <input type="number">
+  <div class="collapse show" id="page2" style = 'margin-top: 10px'>
+    <div class="card card-body">
+      <h3>Настройка Проектора</h3>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" >Вкл</span>
+        </div>
+        <input type="text" id = 'turnOff'class="form-control" placeholder="command" aria-describedby="turn">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" >Выкл</span>
+        </div>
+        <input type="text" id = 'turnOn'class="form-control" placeholder="command" aria-describedby="turn">
+      </div>
+      <div class="form-group">
+        <label for="speed">Скорость</label>
+        <select class="form-control" id="speed">
+          <option value = '9600'  >9600 бит/с</option>
+          <option value = '19200' >19200 бит/с</option>
+          <option value = '38400' >38400 бит/с</option>
+          <option value = '57600' >57600 бит/с</option>
+          <option value = '115200'>115200 бит/с</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="collapse show" id="page3" style = 'margin-top: 10px'>
+    <div class="card card-body">
+      <h3>Настройка Экрана</h3>
+      <div class="input-group mb-3">
+        <div class="input-group-append">
+          <span class="input-group-text">Поднять</span>
+        </div>
+        <input type="text" id="timeOpen" class="form-control" placeholder="Поднять" aria-describedby="mcrStep" onkeypress="return (event.charCode >= 48 && event.charCode <= 57 && /^\d{0,90000000}$/.test(this.value));" value = '300'>
+      </div>
+      <div class="input-group mb-3">
+      	 <div class="input-group-append">
+          <span class="input-group-text">Опустить</span>
+        </div>
+        <input type="text" class="form-control" id="timeClose" placeholder="Опустить" aria-describedby="timeClose" onkeypress="return (event.charCode >= 48 && event.charCode <= 57 && /^\d{0,90000000}$/.test(this.value));" value = '300'>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="collapse show" id="page4" style = 'margin-top: 10px'>
+    <div class="card card-body">
+      <h3>Настройка Микрофона</h3>
+      <div class="input-group mb-3">
+      	<div class="input-group-append">
+          <span class="input-group-text">Макс. значение</span>
+        </div>
+        <input oninput="checkMic()"  type="text"id="micMax" class="form-control" placeholder="Макс. значение" aria-describedby="micMax"onkeypress="return (event.charCode >= 48 && event.charCode <= 57 && /^\d{0,90000000}$/.test(this.value));" value = '255'> 
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-append">
+          <span class="input-group-text">Шаг</span>
+        </div>
+        <input oninput="checkMic()" value="0" type="text" id="micStep" class="form-control" placeholder="Шаг" aria-describedby="micStep" onkeypress="return (event.charCode >= 48 && event.charCode <= 57 && /^\d{0,90000000}$/.test(this.value));">
+      </div>
+      <div class="input-group mb-3">
+      	<div class="input-group-append">
+          <span class="input-group-text">Мин. значение</span>
+        </div>
+        <input oninput="checkMic()"  id="micMin" type="text" class="form-control" placeholder="Мин. значение" aria-describedby="micMin" value = '0' onkeypress="return (event.charCode >= 48 && event.charCode <= 57 && /^\d{0,90000000}$/.test(this.value));">
+      </div>
+    </div>
+  </div>
+  <div class="collapse show" id="page5" style = 'margin-top: 10px'>
+    <div class="card card-body">
+      <h3>Настройка Громкости</h3>
+      <div class="input-group mb-3">
+      	<div class="input-group-append">
+          <span class="input-group-text">Макс. значение</span>
+        </div>
+        <input oninput="checkVol()" type="text" id="volMax" class="form-control" placeholder="Макс. значение" aria-describedby="volMax" onkeypress="return (event.charCode >= 48 && event.charCode <= 57 && /^\d{0,90000000}$/.test(this.value));" value = '255'>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-append">
+          <span class="input-group-text">Шаг</span>
+        </div>
+        <input oninput="checkVol()" id="volStep" value="0"  type="text" class="form-control" placeholder="Шаг" aria-describedby="volStep" onkeypress="return (event.charCode >= 48 && event.charCode <= 57 && /^\d{0,90000000}$/.test(this.value));">
+      </div>
+      <div class="input-group mb-3">
+      	<div class="input-group-append">
+          <span class="input-group-text">Мин. значение</span>
+        </div>
+        <input oninput="checkVol()" type="text" id="volMin"class="form-control" placeholder="Мин. значение" aria-describedby="volMin" onkeypress="return (event.charCode >= 48 && event.charCode <= 57 && /^\d{0,90000000}$/.test(this.value));" value = '0'>
+      </div>
+    </div>
+  </div>
+
+  <div class="collapse show" id="page6" style = 'margin-top: 10px; width: 100%;'>
+
+    <div class="card card-body card-button">
+      <div class="row" style = 'width: 100%'>
+      <h3 style = 'width: 100px'>Кнопки</h3>
+      <div onclick="showSelect()" class="btn btn-warning" style = 'height:32px; position: absolute;z-index: 2;right: 0; border-radius: 10px 0 0 10px;'>
+        <img style = 'float:left; margin-bottom: 10px;width:16px; height:16px;'src="https://cdn.icon-icons.com/icons2/933/PNG/512/settings-cogwheel-button_icon-icons.com_72559.png">
+      </div>
+    </div>
+    <div class="row" id="select" style="display: none; margin-left: -15px; margin-bottom: 10px; position: relative; border: none;">
+      <div class="col-sm-6 card " style = 'border: none'>
+        <div class="card card-l" style = 'border: none;height: 120px;     margin-bottom: 20px;'>
+          <div class="card-body card-l" style = 'border: 1px solid #ffc107;    margin-bottom: 20px;'>
+            <h3 class="card-title" style="color:#ffc107">Настройка</h3>
+              <select class="custom-select" id = 'selectValue'>
+                <option value="On/Off PC">On/Off PC</option>
+                <option value="On/Off Projec.">On/Off Projec.</option>
+                <option value="Screen Up">Screen Up</option>
+                <option value="Screen Down">Screen Down</option>
+                <option value="Mic +">Mic +</option>
+                <option value="Mic -">Mic -</option>
+                <option value="Vol +">Vol +</option>
+                <option value="Vol -">Vol -</option>
+              </select>   
+          </div>
+        </div>
+      </div>
+    </div>  
+    <div class="container" style = 'max-width:380px'> 
+           <div class = 'row'>
+              <div class="col"><button type="button" class="btn btn-primary" value="0" id ='btn1' onclick="switcher()"></button></div>
+              <div class="col"><button type="button" class="btn btn-primary" value="0" id ='btn2' onclick="switcher()"></button></div>
+            </div>
+            <div class = 'row'style = 'margin-top: 20px;'>
+              <div class="col"><button type="button" class="btn btn-primary" value="0" id ='btn3' onclick="switcher()"></button></div>
+              <div class="col"><button type="button" class="btn btn-primary" id ='btn4' onclick="switcher()"></button></div>
+            </div>
+            <div class = 'row'style = 'margin-top: 20px;'>
+              <div class="col"><button type="button" class="btn btn-primary" id ='btn5' onclick="switcher()"></button></div>
+              <div class="col"><button type="button" class="btn btn-primary" id ='btn6' onclick="switcher()"></button></div>
+            </div>
+            <div class = 'row'style = 'margin-top: 20px;'>
+              <div class="col"><button type="button" class="btn btn-primary" id ='btn7' onclick="switcher()"></button></div>
+              <div class="col"><button type="button" class="btn btn-primary" id ='btn8' onclick="switcher()"></button></div>
+            </div>
+
+      </div>
+      <script type="text/javascript">
+        
+      </script>
+        </div>
+        <div class="collapse show" id="page7" style = 'margin-top: 10px'>
+          <div class="card card-body contact">
+            <h3>Контакты</h3>
+                <h4>Почта: <span>dasda@mail.com</span></h4>
+                <h4>Телефон: <span>79122050000</span></h4>
+                <h4>VK: <span><a href = '#'>click</a></span></h4>
+                <h4>WhatsApp: <span>79122050000</span></h4>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <script type="text/javascript" src = 'jquery.js'></script>
+  <script src = 'js/bootstrap.js'></script>
+  <script type="text/javascript" src = 'script.js'></script>
 </body>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="script.js"></script>
 </html>
